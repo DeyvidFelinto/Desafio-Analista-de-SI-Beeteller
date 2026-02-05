@@ -29,29 +29,28 @@ Esse contexto foi utilizado de forma estratégica para priorizar atividades fund
 ### 1️⃣ Checklist Cruzado (Matriz de Aderência)
 Comparação cruzada entre os requisitos das normas ISO/IEC 27001:2022, Resolução BCB nº 4.893/2021 e PCI DSS v4.0, com avaliação e indicação do grau de aderência do ambiente analisado.
 
-👉 Arquivo: [01-matriz-aderencia/matriz-aderencia.md](01-matriz-aderencia/matriz-aderencia.md)
-
+👉 Arquivo: [matriz-aderencia.md](matriz-aderencia.md)
 
 ---
 
 ### 2️⃣ Plano de Ação Priorizado
 Plano de Ação estratégico baseado nos gaps identificados, priorizando ações imediatas com alto impacto, foco na redução de riscos e na continuidade operacional.
 
-👉 Arquivo: [02-plano-acao/plano-acao-priorizado.md](02-plano-acao/plano-acao-priorizado.md)
+👉 Arquivo: [plano-acao-priorizado.md](plano-acao-priorizado.md)
 
 ---
 
 ### 3️⃣ Documento Normativo
 Elaboração de documento formal para atendimento a requisito crítico identificado como "Não Aderente", seguindo uma estrutura formal com boas práticas de governança e auditoria.
 
-👉 Arquivo: [03-procedimentos/procedimento-gestao-incidentes.md](03-procedimentos/procedimento-gestao-incidentes.md)
+👉 Arquivo: [procedimento-gestao-incidentes.md](procedimento-gestao-incidentes.md)
 
 ---
 
 ### 4️⃣ Monitoramento Contínuo
 Proposta de mecanismos para manter o SGSI continuamente monitorado e em processo de melhoria contínua.
 
-👉 Arquivo: [04-monitoramento/monitoramento-sgsi.md](04-monitoramento/monitoramento-sgsi.md)
+👉 Arquivo: [monitoramento-sgsi.md](monitoramento-sgsi.md)
 
 ---
 
