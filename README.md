@@ -31,6 +31,7 @@ Comparação cruzada entre os requisitos das normas ISO/IEC 27001:2022, Resoluç
 
 👉 Arquivo: [01-matriz-aderencia/matriz-aderencia.md](01-matriz-aderencia/matriz-aderencia.md)
 
+
 ---
 
 ### 2️⃣ Plano de Ação Priorizado
