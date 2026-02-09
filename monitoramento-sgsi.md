@@ -1,94 +1,62 @@
-# Mecanismos de Monitoramento Contínuo do SGSI
+# Mecanismos de Monitoramento Contínuo (KPIs & KRIs)
 
-## Analista de Segurança da Informação (Conformidade e Governança)
+## Contexto Estratégico
 
----
+A efetividade do SGSI não se mede pela quantidade de documentos, mas pela capacidade de resposta a incidentes e pela aderência contínua aos controles.
 
-## Contexto
-
-A efetividade de um Sistema de Gestão de Segurança da Informação (SGSI) depende da capacidade de acompanhar, medir e evoluir seus controles de forma contínua. 
-Este documento apresenta propostas de monitoramento alinhadas às boas práticas de governança e aos requisitos da **ISO/IEC 27001:2022**, da **Resolução BCB nº 4.893/2021** e do **PCI DSS v4.0**.
-
-O foco é apoiar a gestão na identificação antecipada de riscos, no acompanhamento da conformidade regulatória e na melhoria contínua do ambiente de segurança.
+Esta proposta define o **Painel de Indicadores** que será apresentado mensalmente ao Comitê de Risco e à Diretoria, visando dar visibilidade sobre a maturidade do ambiente frente à **ISO 27001**, **PCI DSS 4.0** e ao novo prazo regulatório do **Bacen (Março/2026)**.
 
 ---
 
-## Objetivo
+## 1. Indicadores de Desempenho (KPIs) - Operacional
 
-Definir mecanismos de monitoramento contínuo do SGSI que permitam:
-- Identificar desvios e fragilidades.
-- Avaliar a eficácia dos controles implementados.
-- Apoiar a tomada de decisão pela gestão e pela alta administração.
-
----
-
-## Indicadores (KPI e KRI)
-
-### Indicadores de Desempenho (KPI)
-Indicadores voltados ao acompanhamento da execução e da efetividade dos controles:
-
-- Percentual de colaboradores treinados em Segurança da Informação.
-- Quantidade de incidentes de segurança registrados por período.
-- Percentual de ações do Plano de Ação concluídas dentro do prazo.
-- Tempo médio de resposta a incidentes de segurança.
-
-### Indicadores de Risco (KRI)
-Indicadores voltados à exposição a riscos relevantes para o negócio:
-
-- Quantidade de incidentes classificados como de alto impacto.
-- Volume de acessos com privilégios elevados no ambiente.
-- Número de não conformidades identificadas em auditorias internas.
-- Terceiros críticos sem avaliação de segurança vigente.
+| Indicador (KPI) | Meta Definida (SLA) | Frequência | Fonte de Dados |
+| :--- | :--- | :--- | :--- |
+| **Cobertura de Patching** | > 95% dos ativos críticos atualizados em até 7 dias | Mensal | Ferramenta de Scan |
+| **Efetividade do MFA** | 100% dos acessos remotos e admin com duplo fator ativo | Contínua | IdP / Active Directory |
+| **Tempo de Resposta** | Incidentes de Alta Criticidade contidos em < 4 horas | Mensal | Ferramenta de Service Desk |
+| **Conscientização (Phishing)** | < 5% de taxa de cliques em testes simulados | Trimestral | Plataforma de Treinamento |
 
 ---
 
-## Auditorias e Avaliações Periódicas
+## 2. Indicadores de Risco (KRIs) - Tático/Estratégico
 
-- Realização de auditorias internas de Segurança da Informação com cronograma previamente definido.
-- Avaliação periódica da aderência aos requisitos regulatórios e normativos aplicáveis.
-- Acompanhamento estruturado dos planos de ação decorrentes das auditorias, com definição de responsáveis e prazos.
-
----
-
-## Comitê de Segurança da Informação
-
-- Instituição de comitê multidisciplinar envolvendo Segurança da Informação, TI, Compliance e áreas de negócio.
-- Reuniões periódicas para análise de riscos, incidentes relevantes e indicadores do SGSI.
-- Registro formal das decisões, encaminhamentos e deliberações do comitê.
+| Indicador de Risco (KRI) | Limite de Tolerância (Threshold) | Ação em caso de Desvio |
+| :--- | :--- | :--- |
+| **Exposição na Dark Web** | **Zero** credenciais de VIPs/Admins expostas | Redefinição forçada de senha imediata e análise forense. |
+| **Shadow IT** | < 3 Aplicações não homologadas detectadas na rede | Bloqueio via Proxy/Firewall e notificação ao gestor. |
+| **Risco de Terceiros** | 100% com avaliação vigente | Bloqueio de pagamentos ou acesso até regularização. |
+| **Débito Regulatório (Bacen)** | 100% dos controles da Res. 4.893 implementados até Fev/2026 | Convocação de Comitê Extraordinário de Crise. |
 
 ---
 
-## Acompanhamento de Adequação Regulatória (Bacen - 2026)
+## 3. Estrutura do Reporte
 
-Considerando o endurecimento recente das regras de cibersegurança do Banco Central e o prazo de adequação previsto para **março de 2026**, é recomendado a adoção de um mecanismo específico de acompanhamento regulatório.
+Garantir a transparência exigida pela **Resolução BCB 4.893 (Art. 12)**, realizar um reporte mensal:
 
-Esse acompanhamento deve permitir à gestão:
-- Monitorar o status das ações relacionadas aos requisitos regulatórios.
-- Identificar riscos de atraso ou não conformidade.
-- Consolidar evidências de implementação para auditorias e eventuais fiscalizações.
+### 🚦 Painel de Conformidade Regulatória (Data limite: 01/03/2026).
 
-Como prática, sugere-se a manutenção de um painel executivo de conformidade, com indicadores simples, tais como:
-- Percentual de requisitos regulatórios atendidos.
-- Ações críticas em andamento ou em atraso.
-- Riscos regulatórios classificados como altos.
+* **Status Geral:** 🟡 EM ATENÇÃO
+* **Aderência ISO 27001:** 85% (🟢 Estável)
+* **Aderência PCI DSS 4.0:** 70% (🟡 Atenção: Foco no Req 8.4.2 - MFA)
+* **Novas Resoluções (CMN 5.274):** 40% (🔴 Crítico: Necessário investimento em Threat Intel (Monitorar a Dark Web)
 
-Esse mecanismo contribui para maior previsibilidade, transparência e tomada de decisão antecipada frente ao novo cenário regulatório.
+### 🚨 Top 3 Focos de Atenção
+1.  **Vulnerabilidades:** Falta de scans automatizados (Plano de ação em andamento).
+2.  **Identidade:** Acessos administrativos sem MFA (Mitigação prevista para 30 dias).
+3.  **Monitoramento:** Monitorar vazamentos na Deep Web (Risco de Fraude).
 
 ---
 
-## Revisão e Melhoria Contínua
+## 4. Rituais de Governança
 
-- Revisão periódica das políticas, normas e procedimentos de Segurança da Informação.
-- Atualização da análise de riscos sempre que houver mudanças relevantes no ambiente, nos processos ou no cenário regulatório.
-- Utilização dos resultados de incidentes, auditorias e indicadores como insumo para a melhoria contínua do SGSI.
-
-Além dos indicadores internos, recomenda-se a adoção de mecanismos de inteligência para monitoramento de ameaças externas, incluindo a identificação de exposições em ambientes como a dark web, onde credenciais de acesso e informações sensíveis podem ser comercializadas. 
-Esse tipo de monitoramento contribui para a detecção antecipada de riscos de fraude e comprometimento de contas.
-
-No contexto de acessos privilegiados, também é relevante o uso de controles que garantam a proteção, rotação e rastreabilidade de credenciais administrativas. 
-Soluções de apoio, como ferramentas de gestão de senhas locais (ex.: LAPS), podem ser utilizadas para reforçar esse controle e gerar evidências para auditoria.
+* **Mensal:** Reunião do Comitê de Segurança para apresentação dos KPIs.
+* **Trimestral:** Revisão de Acessos.
+* **Semestral:** Teste de Mesa do Plano de Continuidade de Negócios (PCN).
+* **Anual:** Auditoria Externa e Pentest (Blackbox/Greybox).
 
 ---
 
 **Nota:**  
+
 O ambiente descrito é fictício e utilizado exclusivamente para fins avaliativos.
