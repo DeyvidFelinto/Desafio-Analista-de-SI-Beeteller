@@ -23,7 +23,7 @@ Todo incidente deve ser classificado imediatamente para definir o SLA de Respost
 
 | Nível | Descrição | Exemplo | SLA de Resposta |
 | :--- | :--- | :--- | :--- |
-| **P1 - Crítico** | Parada de Negócio, Vazamento de Dados Sensíveis ou Ransomware. | Servidor criptografado, Vazamento de base de CPF. | **Imediato** (Acionar Comitê) |
+| **P1 - Crítico** | Parada de Negócio, Vazamento de Dados Sensíveis ou Ransomware. | Servidor criptografado, Vazamento de base de dados. | **Imediato** (Acionar Comitê) |
 | **P2 - Alto** | Degradação de serviço ou infecção contida. | Malware em 1 estação, Phishing direcionado. | **Menor que 2 Horas** |
 | **P3 - Médio** | Evento suspeito sem impacto confirmado. | Falha de login recorrente, varredura de porta. | **Menor que 24 Horas** |
 | **P4 - Baixo** | Desvio de política ou falso positivo. | Instalação de software não autorizado. | **Menor que 48 Horas** |
