@@ -1,77 +1,48 @@
-# Procedimento de Gestão de Incidentes de Segurança da Informação
-
-## Analista de Segurança da Informação (Conformidade e Governança)
-
----
+# Procedimento de Resposta a Incidentes de Segurança (CSIRT)
 
 ## 1. Objetivo
-
-Definir diretrizes e etapas para a identificação, registro, tratamento e comunicação de incidentes de Segurança da Informação, com o objetivo de reduzir impactos operacionais, financeiros, regulatórios e reputacionais para a instituição.
-
----
+Estabelecer o protocolo oficial para detecção, contenção, erradicação e recuperação de incidentes cibernéticos, garantindo a conformidade com a **Resolução BCB nº 4.893**, **LGPD** e **PCI DSS v4.0**, minimizando impactos financeiros e reputacionais.
 
 ## 2. Escopo
+Este procedimento é padrão para todos os colaboradores, fornecedores e terceiros conectados à infraestrutura da Instituição.
 
-Este procedimento aplica-se a todos os colaboradores, prestadores de serviço e terceiros que possuam acesso a informações, sistemas ou ativos tecnológicos da instituição.
+## 3. Papéis e Responsabilidades (CSIRT)
+* **Primeiro Respondente:** Service Desk/SOC - Responsável pela triagem inicial.
+* **Analista de Resposta:** Segurança da Informação - Responsável pela contenção técnica.
+* **Sala de Crise:** Diretoria + Jurídico + DPO - Irá decidir sobre a comunicação e a continuidade das operações.
+* **DPO:** O encarregado da proteção de dados faz comunicação com a ANPD e Titulares.
 
----
+## 4. Fluxo de Tratamento (Ciclo de Vida)
 
-## 3. Definições
+### 4.1. Detecção e Triagem
+* **Canais de Denúncia:** SIEM, E-mail de Segurança, Service Desk.
+* **SLA de Triagem:** Todo alerta crítico deve ser analisado no menor tempo possível.
 
-- **Incidente de Segurança da Informação:** Evento ou situação que comprometa, ou possa comprometer, a confidencialidade, a integridade ou a disponibilidade das informações.
-- **Evento de Segurança:** Ocorrência identificada que pode ou não resultar em um incidente de segurança.
-- **Tratamento de Incidente:** Conjunto de ações adotadas para conter, analisar, corrigir e registrar um incidente.
-- **Responsável pelo Incidente:** Área ou profissional designado para conduzir o tratamento e acompanhamento do incidente.
+### 4.2. Classificação de Severidade (Matriz de Risco)
+Todo incidente deve ser classificado imediatamente para definir o SLA de Resposta:
 
----
+| Nível | Descrição | Exemplo | SLA de Resposta |
+| :--- | :--- | :--- | :--- |
+| **P1 - Crítico** | Parada de Negócio, Vazamento de Dados Sensíveis ou Ransomware. | Servidor criptografado, Vazamento de base de CPF. | **Imediato** (Acionar Comitê) |
+| **P2 - Alto** | Degradação de serviço ou infecção contida. | Malware em 1 estação, Phishing direcionado. | **Menor que 2 Horas** |
+| **P3 - Médio** | Evento suspeito sem impacto confirmado. | Falha de login recorrente, varredura de porta. | **Menor que 24 Horas** |
+| **P4 - Baixo** | Desvio de política ou falso positivo. | Instalação de software não autorizado. | **Menor que 48 Horas** |
 
-## 4. Diretrizes e Etapas
+### 4.3. Contenção e Erradicação
+* **Ação Prioritária:** Isolar o ativo afetado da rede para impedir qualquer tipo de movimentação.
+* **Preservação de Evidências:** É proibido desligar ou reiniciar equipamentos comprometidos antes da coleta de logs e memória volátil.
 
-### 4.1 Identificação e Registro
-- Todo evento ou suspeita de incidente deve ser comunicado à área de Segurança da Informação assim que identificado.
-- O registro do incidente deve conter, sempre que possível: data e hora, descrição do ocorrido, sistemas ou informações afetadas e responsável pela identificação.
+### 4.4. Comunicação Regulatória
 
-### 4.2 Classificação
-Os incidentes devem ser classificados de acordo com o impacto potencial ou efetivo ao negócio:
+1.  **Banco Central:** Notificar a ocorrência de incidentes que afetem a prestação de serviços ou sigilo de dados (Conforme Res. BCB 4.893).
+2.  **ANPD (Via DPO):** Notificar em "prazo razoável" caso envolva dados pessoais com risco aos titulares.
+3.  **Bandeiras (Visa/Master):** Notificar imediatamente em caso de comprometimento de dados de cartão (CDE).
 
-- **Baixo:** Sem impacto relevante para a operação ou para os clientes.
-- **Médio:** Impacto operacional controlável ou risco potencial à informação.
-- **Alto:** Impacto significativo à operação, aos clientes, à imagem institucional ou ao cumprimento de requisitos regulatórios.
+### 4.5. Pós-Incidente
+* Após o encerramento, o CSIRT deve produzir o **Relatório de Causa Raiz (RCA)** em até 5 dias úteis.
+* O relatório deve conter: Linha do tempo, falha explorada, impacto financeiro e plano de ação para evitar reincidência.
 
-### 4.3 Tratamento e Contenção
-- A área de Segurança da Informação é responsável por coordenar as ações de contenção, mitigação e correção do incidente.
-- Sempre que necessário, áreas técnicas, jurídicas ou de compliance poderão ser envolvidas no processo.
-- As ações devem priorizar a continuidade dos serviços essenciais e a preservação de evidências para análise e auditoria.
-
-### 4.4 Comunicação
-- Incidentes classificados como **médio** ou **alto** devem ser comunicados à alta administração.
-- Quando aplicável, a comunicação a órgãos reguladores deve seguir as orientações da área de Compliance.
-- Qualquer comunicação externa relacionada ao incidente deve ser realizada apenas por áreas formalmente autorizadas.
-
-### 4.5 Encerramento
-- Todo incidente deve ser encerrado após a conclusão das ações corretivas.
-- Sempre que aplicável, deve ser realizada uma análise de causa raiz e definidas ações preventivas para evitar recorrência.
-- Os registros de incidentes devem ser mantidos para fins de auditoria, acompanhamento, melhoria contínua e alimentar a base de conhecimento.
-
----
-
-## 5. Responsabilidades
-
-- **Colaboradores e Terceiros:** Comunicar imediatamente qualquer evento ou suspeita de incidente de segurança.
-- **Segurança da Informação:** Coordenar o tratamento, registro e acompanhamento dos incidentes.
-- **TI:** Apoiar tecnicamente nas ações de contenção e correção.
-- **Compliance:** Avaliar impactos regulatórios e a necessidade de comunicação a órgãos externos.
-- **Alta Administração:** Apoiar decisões estratégicas quando houver incidentes de alto impacto.
-
----
-
-## 6. Referências Normativas
-
-- ISO/IEC 27001:2022 - Anexo A, controle A.5.25  
-- Resolução BCB nº 4.893/2021 – Art. 9º  
-- PCI DSS v4.0 - Requisito 12.10
-
----
-
-**Nota:**  
-O ambiente descrito é fictício e utilizado exclusivamente para fins avaliativos.
+## 5. Referências
+* **NIST SP 800-61r2** (Computer Security Incident Handling Guide)
+* **PCI DSS v4.0** – Requisito 12.10 (Plano de Resposta a Incidentes)
+* **Resolução BCB 4.893/2021** – Art. 21 (Política de Resposta a Incidentes)
